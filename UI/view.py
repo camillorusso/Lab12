@@ -1,6 +1,5 @@
 import flet as ft
 
-
 class View(ft.UserControl):
     def __init__(self, page: ft.Page):
         super().__init__()
@@ -42,7 +41,8 @@ class View(ft.UserControl):
         row1 = ft.Row([self.ddyear, self.ddcountry, self.btn_graph],
                       alignment=ft.MainAxisAlignment.CENTER)
         self._page.controls.append(row1)
-        self._controller.fillDD()
+        self._controller.fillDD_nations()
+        self._controller.fillDD_years()
 
         # List View where the reply is printed
         self.txt_result = ft.ListView(expand=0, spacing=5, padding=5, auto_scroll=True)
